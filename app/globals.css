@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-1: rgb(41, 209, 209);
+  --primary-2: rgb(59, 48, 84);
+  --secondary: rgb(244, 98, 98);
+  --neutral-50: rgb(255, 255, 255);
+  --neutral-100: rgb(191, 191, 191);
+  --neutral-200: rgb(157, 153, 166);
+  --neutral-300: rgb(54, 51, 61);
+  --neutral-400: rgb(35, 33, 38);
+}
+
+body {
+  background: var(--neutral-50);
+  color: var(--neutral-200);
+  font-size: 1rem;
+}
+
+.btn {
+  @apply rounded-full bg-cyan-400 p-3 text-white hover:bg-cyan-300;
+}
