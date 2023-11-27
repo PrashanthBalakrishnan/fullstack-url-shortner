@@ -1,6 +1,7 @@
 import Hero from "@/app/components/Hero";
 import Nav from "@/app/components/Nav";
 import UrlShortner from "./components/UrlShortner";
+import Urls from "./components/Urls";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       </header>
       <Hero />
       <UrlShortner />
+      <Urls />
     </main>
   );
 }

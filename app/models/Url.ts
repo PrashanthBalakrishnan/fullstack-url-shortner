@@ -1,8 +1,12 @@
-import mongoose from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-export const urlScheme = new mongoose.Schema({
+const UrlSchema = new Schema({
   urlCode: String,
   longUrl: String,
   shortUrl: String,
   date: { type: String, default: Date.now },
 });
+
+const Url = models.Url || model("Url", UrlSchema);
+
+export default Url;

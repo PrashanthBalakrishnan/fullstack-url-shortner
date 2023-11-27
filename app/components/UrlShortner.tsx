@@ -1,12 +1,14 @@
 "use client";
+import axios from "axios";
 import { useState } from "react";
 
 const UrlShortner = () => {
   const [longUrl, setLongUrl] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Submitted");
+    axios.post("/api/shorten", { longUrl });
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
