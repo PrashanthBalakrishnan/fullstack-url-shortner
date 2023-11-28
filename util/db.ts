@@ -11,9 +11,7 @@ export const connectDB = async () => {
   }
 
   try {
-    await mongoose.connect(
-      "mongodb+srv://prashanth:eT75HjUmUBr5itDS@cluster0.q46a5u3.mongodb.net/test",
-    );
+    await mongoose.connect(process.env.DATABSE_URL!);
     isConnected = true;
     console.log("MongoDB connected");
   } catch (err) {

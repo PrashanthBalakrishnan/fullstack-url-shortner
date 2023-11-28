@@ -20,5 +20,5 @@ body {
 }
 
 .btn {
-  @apply rounded-full bg-cyan-400 p-3 text-white hover:bg-cyan-300;
+  @apply bg-cyan-400 text-white hover:bg-cyan-300;
 }

@@ -18,8 +18,8 @@ type urlType = {
 export async function POST(req: Request) {
   const body = await req.json();
   const { longUrl } = body;
-  const baseUrl = "http://localhost:3000/api/";
-  if (!validUrl.isUri(baseUrl)) {
+  const baseUrl = process.env.BASE_URL;
+  if (!validUrl.isUri(baseUrl!)) {
     return new NextResponse("Invalid base url", { status: 401 });
   }
 
@@ -29,9 +29,8 @@ export async function POST(req: Request) {
       await connectDB();
       const urlCode = uid.rnd();
       let url = await Url.findOne({ longUrl });
-      console.log(url);
       if (url) {
-        return new NextResponse(url, { status: 200 });
+        return NextResponse.json(url);
       } else {
         const shortUrl = baseUrl + urlCode;
         url = new Url({
@@ -40,9 +39,8 @@ export async function POST(req: Request) {
           urlCode,
           date: new Date(),
         });
-        console.log(url);
         await url.save();
-        return new NextResponse(url, { status: 200 });
+        return NextResponse.json(url);
       }
     } catch (error) {
       console.log(error);
@@ -50,5 +48,19 @@ export async function POST(req: Request) {
     }
   } else {
     return new NextResponse("Invalid long url", { status: 401 });
+  }
+}
+
+export async function GET(req: Request) {
+  const body = await req.json();
+  const { longUrl } = body;
+  try {
+    await connectDB();
+    const urls: urlType[] = await Url.find({}).sort({ date: -1 });
+
+    return NextResponse.json(urls);
+  } catch (error) {
+    console.log(error);
+    return new NextResponse(null, { status: 500 });
   }
 }

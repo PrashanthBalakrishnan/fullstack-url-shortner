@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col items-center md:flex-row">
+    <section className="relative mx-auto mb-36 flex  max-w-screen-xl flex-col items-center p-5 md:flex-row">
       <Image
-        className="-right-40 top-10 -z-10 ml-6 mt-10 overflow-hidden md:absolute md:order-2"
+        className="-right-40 top-10 -z-10 ml-6 mt-10 md:absolute md:order-2"
         src={heroImage}
         alt="hero image"
       />
@@ -18,7 +18,7 @@ const Hero = () => {
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <Link href="#" className="btn w-fit">
+        <Link href="#" className="btn w-fit rounded-full p-3">
           Get Started
         </Link>
       </div>

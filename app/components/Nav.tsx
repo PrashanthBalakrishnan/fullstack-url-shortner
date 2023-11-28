@@ -10,7 +10,7 @@ const Nav = () => {
   const [mobileNav, setMobileNav] = useState(false);
 
   return (
-    <nav className="flex items-center">
+    <nav className="mx-auto flex max-w-screen-xl items-center p-5">
       <Link href="/" className="mr-5">
         <Image src={logo} alt="logo" />
       </Link>
@@ -42,7 +42,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link className="btn" href="/">
+            <Link className="btn rounded-full p-3" href="/">
               Sign Up
             </Link>
           </li>
