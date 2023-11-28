@@ -1,12 +1,19 @@
-import ShortUniqueId from "short-unique-id";
 import validUrl from "valid-url";
 import { NextResponse } from "next/server";
+import ShortUniqueId from "short-unique-id";
 
 import { connectDB } from "@/util/db";
 
 import Url from "@/app/models/Url";
+const uid = new ShortUniqueId({ length: 4 });
 
-const uid = new ShortUniqueId({ length: 6 });
+type urlType = {
+  longUrl: string;
+  urlCode: string;
+  shortUrl: string;
+  date: Date;
+  _id: string;
+};
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -16,13 +23,13 @@ export async function POST(req: Request) {
     return new NextResponse("Invalid base url", { status: 401 });
   }
 
-  // create url code
-  const urlCode = uid.rnd();
   //  check long url
   if (validUrl.isUri(longUrl)) {
     try {
       await connectDB();
+      const urlCode = uid.rnd();
       let url = await Url.findOne({ longUrl });
+      console.log(url);
       if (url) {
         return new NextResponse(url, { status: 200 });
       } else {
@@ -33,6 +40,7 @@ export async function POST(req: Request) {
           urlCode,
           date: new Date(),
         });
+        console.log(url);
         await url.save();
         return new NextResponse(url, { status: 200 });
       }
