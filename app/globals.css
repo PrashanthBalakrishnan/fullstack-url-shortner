@@ -20,5 +20,5 @@ body {
 }
 
 .btn {
-  @apply bg-cyan-400 text-white hover:bg-cyan-300;
+  @apply cursor-pointer bg-cyan-400 text-white hover:bg-cyan-300;
 }

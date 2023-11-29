@@ -23,7 +23,7 @@ const UrlData = ({ data }: UrlDataProps) => {
           className="mt-3 flex flex-col justify-between gap-y-3 rounded-lg bg-white p-5 font-semibold md:flex-row md:items-center"
           key={i}
         >
-          <span className="text-black">{url.longUrl}</span>
+          <span className="max-w-[700px]: text-black">{url.longUrl}</span>
           <div className="flex flex-col gap-5 md:flex-row md:items-center">
             <span className="text-cyan-500">{url.shortUrl}</span>
             <button

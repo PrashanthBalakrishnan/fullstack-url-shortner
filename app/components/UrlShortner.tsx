@@ -35,7 +35,6 @@ const UrlShortner = () => {
     setDisplayUrl(true);
     setLongUrl("");
   };
-  console.log(data);
   return (
     <section className="bg-red mx-auto max-w-screen-xl p-5">
       <div className="-mt-16  rounded-xl bg-[var(--primary-2)] px-16 py-12">
