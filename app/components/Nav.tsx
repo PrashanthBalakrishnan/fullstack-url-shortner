@@ -16,7 +16,7 @@ const Nav = () => {
       </Link>
       <div
         className={clsx(
-          "absolute  left-1/2 top-[-100%] w-[90%] -translate-x-1/2 rounded-lg bg-[var(--primary-2)] md:static md:w-full  md:translate-x-0 md:bg-white",
+          "absolute  left-1/2 top-[-100%] w-[90%] -translate-x-1/2 rounded-lg bg-[var(--primary-2)] md:static md:left-0 md:w-full  md:translate-x-0 md:bg-white",
           mobileNav && "top-[9%]",
         )}
       >
@@ -43,7 +43,10 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link className="btn rounded-full  p-3" href="/">
+            <Link
+              className="btn  block whitespace-nowrap rounded-full p-3"
+              href="/"
+            >
               Sign Up
             </Link>
           </li>
