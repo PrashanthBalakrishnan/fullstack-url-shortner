@@ -40,6 +40,7 @@ export async function POST(req: Request) {
           date: new Date(),
         });
         await url.save();
+
         return NextResponse.json(url);
       }
     } catch (error) {
