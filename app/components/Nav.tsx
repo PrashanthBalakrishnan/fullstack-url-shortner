@@ -16,7 +16,7 @@ const Nav = () => {
       </Link>
       <div
         className={clsx(
-          "absolute  left-1/2 top-[-100%] w-[90%] -translate-x-1/2 rounded-lg bg-[var(--primary-2)] md:static md:w-full md:bg-white",
+          "absolute  left-1/2 top-[-100%] w-[90%] -translate-x-1/2 rounded-lg bg-[var(--primary-2)] md:static md:w-full  md:translate-x-0 md:bg-white",
           mobileNav && "top-[9%]",
         )}
       >
