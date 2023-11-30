@@ -11,7 +11,7 @@ const Hero = () => {
         alt="hero image"
       />
       <div className="-z-10 flex h-[50vh] flex-col items-center justify-center gap-4 text-center md:mt-0 md:w-[33%] md:items-start md:text-left">
-        <h1 className="text-[3.4rem] font-bold  leading-[1] text-[var(--neutral-400)]">
+        <h1 className="block text-[3.4rem]  font-bold leading-[1] text-[var(--neutral-400)]">
           More than just shorter links
         </h1>
         <p>
